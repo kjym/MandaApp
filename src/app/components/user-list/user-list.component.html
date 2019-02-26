@@ -1,0 +1,32 @@
+
+<h5>User List</h5>
+
+<div *ngIf="users; else nouser">
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Username</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">LastName</th>
+          <th scope="col" colspan="2" style="width:5%">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <th scope="row"> {{ user.userid }} </th>
+          <td> {{ user.username }} </td>
+          <td> {{ user.firstname }} </td>
+          <td> {{ user.lastname }} </td>
+          <td class="update" (click)="update(user.userid, i)" title="Update"><i class="fa fa-pencil" aria-hidden="true"></i> </td>
+          <td class="delete" (click)="delete(user.userid, i)" title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i> </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<ng-template #nouser>
+   <span>
+     No user information found
+   </span>
+</ng-template>

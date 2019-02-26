@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-6" style="margin: 8vh auto">
+      <div class="card">
+        <div class="card-header">User Registration</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="useraname">User Name</label>
+              <input type="text" id="useraname" class="form-control" [(ngModel)]="useraname" name="useraname" />
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" class="form-control"  [(ngModel)]="firstname" name="firstname" />
+              </div>
+              <div class="form-group">
+                  <label for="lastname">Last Name</label>
+                  <input type="text" id="lastname" class="form-control"  [(ngModel)]="lastname" name="lastname" />
+                </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" />
+              </div>
+              <div class="form-group">
+                  <label for="cpassword">Confirm Password</label>
+                  <input type="password" id="cpassword" class="form-control" [(ngModel)]="cpassword" name="cpassword" />
+                </div>
+              <div class="form-group">
+               <span>{{ message }}</span>   <button type="button" class="btn btn-info" style="float: right;" (click)="onRegister()">Register <i class="fa fa-save"></i></button>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

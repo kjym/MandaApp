@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info">
+  
+    <div class="container">
+        <a class="navbar-brand" routerLink="/"><strong>MandaApp</strong></a>
+        
+        <!--Internal Menu-->
+        <div class="collapse navbar-collapse" id="navbarCollapse" *ngIf="isLoggedIn; else Out">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/home"> <i class="fa fa-home"></i> Home </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/user"><i class="fa fa-user"></i> User</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item" style="cursor: pointer;">
+                <a class="nav-link" (click)="logOut()"><i class="fa fa-sign-out"></i> LogOut</a>
+              </li>
+            </ul>
+        </div>
+
+        
+        <!--External Menu-->
+      <ng-template #Out>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/register"><i class="fa fa-edit"></i> Register </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/login"><i class="fa fa-sign-in"></i> Login </a>
+            </li>
+          </ul>
+        </div> 
+      </ng-template>
+
+</div>
+</nav>
